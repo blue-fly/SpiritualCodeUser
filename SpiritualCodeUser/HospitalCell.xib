@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HospitalCell" focusStyle="custom" rowHeight="129" id="NAz-Wj-UCW" customClass="HospitalCell">
+            <rect key="frame" x="0.0" y="0.0" width="402" height="129"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NAz-Wj-UCW" id="98q-rO-hUl">
+                <rect key="frame" x="0.0" y="0.0" width="402" height="128"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dingdanrenwu" translatesAutoresizingMaskIntoConstraints="NO" id="mSj-do-FOQ">
+                        <rect key="frame" x="29" y="28" width="60" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="0sh-Dk-kIh"/>
+                            <constraint firstAttribute="height" constant="60" id="G5d-0W-aXm"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="renzheng" translatesAutoresizingMaskIntoConstraints="NO" id="IR9-7B-M2t">
+                        <rect key="frame" x="75" y="74" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="T6Z-gC-NNI"/>
+                            <constraint firstAttribute="height" constant="20" id="wQ0-dS-Ejn"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="青岛华韩美容机构" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G7L-1N-5Q8">
+                        <rect key="frame" x="114" y="28" width="260" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="sp0-FW-4Pz"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="青岛市黄岛区香江路" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7wS-6q-dG6">
+                        <rect key="frame" x="115" y="63" width="259" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="mt5-Th-8NQ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="G7L-1N-5Q8" secondAttribute="trailing" constant="20" id="8xj-ZC-d1B"/>
+                    <constraint firstItem="G7L-1N-5Q8" firstAttribute="top" secondItem="98q-rO-hUl" secondAttribute="topMargin" constant="20" id="Bel-wg-arF"/>
+                    <constraint firstItem="7wS-6q-dG6" firstAttribute="top" secondItem="G7L-1N-5Q8" secondAttribute="bottom" constant="5" id="cZs-fV-nVa"/>
+                    <constraint firstItem="G7L-1N-5Q8" firstAttribute="leading" secondItem="mSj-do-FOQ" secondAttribute="trailing" constant="25" id="fKo-6g-Pch"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="7wS-6q-dG6" secondAttribute="trailing" constant="20" id="ftH-Ff-0V1"/>
+                    <constraint firstItem="IR9-7B-M2t" firstAttribute="leading" secondItem="mSj-do-FOQ" secondAttribute="trailing" constant="-14" id="haz-bm-nwa"/>
+                    <constraint firstItem="mSj-do-FOQ" firstAttribute="leading" secondItem="98q-rO-hUl" secondAttribute="leadingMargin" constant="21" id="n3Z-IL-SSr"/>
+                    <constraint firstItem="mSj-do-FOQ" firstAttribute="top" secondItem="98q-rO-hUl" secondAttribute="topMargin" constant="20" id="v3N-2z-XBp"/>
+                    <constraint firstItem="IR9-7B-M2t" firstAttribute="top" secondItem="mSj-do-FOQ" secondAttribute="bottom" constant="-14" id="zFq-a4-Tq9"/>
+                    <constraint firstItem="7wS-6q-dG6" firstAttribute="leading" secondItem="IR9-7B-M2t" secondAttribute="trailing" constant="20" id="zOJ-RR-8wA"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="addLB" destination="7wS-6q-dG6" id="59a-bm-w06"/>
+                <outlet property="nameLB" destination="G7L-1N-5Q8" id="JJ2-93-RoL"/>
+            </connections>
+            <point key="canvasLocation" x="332" y="198.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="dingdanrenwu" width="193" height="253"/>
+        <image name="renzheng" width="18" height="18"/>
+    </resources>
+</document>

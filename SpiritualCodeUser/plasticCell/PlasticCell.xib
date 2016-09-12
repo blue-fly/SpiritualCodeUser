@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlasticCell" rowHeight="135" id="KGk-i7-Jjw" customClass="PlasticCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="135"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="134"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun" translatesAutoresizingMaskIntoConstraints="NO" id="Arq-5a-vP8">
+                        <rect key="frame" x="10" y="15" width="99" height="104"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="Arq-5a-vP8" secondAttribute="height" multiplier="100:105" id="pYl-mt-lio"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="套餐:眼综合+鼻综合+脂肪填充" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Myc-57-rrl">
+                        <rect key="frame" x="119" y="37" width="190" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="J1B-Bv-K3Y"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.23921568627450981" green="0.23921568627450981" blue="0.23921568627450981" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jtv-fO-Kex">
+                        <rect key="frame" x="119" y="81" width="190" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="Foq-Tn-uEm"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.4823529411764706" green="0.4823529411764706" blue="0.4823529411764706" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥59000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blN-hS-ewU">
+                        <rect key="frame" x="119" y="103" width="190" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="6m3-fm-wrU"/>
+                            <constraint firstAttribute="width" constant="42" id="gXG-h8-3RH"/>
+                            <constraint firstAttribute="width" constant="42" id="hUS-bh-qdb"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="STSong" family="STSong" pointSize="14"/>
+                        <color key="textColor" red="0.90588235294117647" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="gXG-h8-3RH"/>
+                                <exclude reference="hUS-bh-qdb"/>
+                            </mask>
+                        </variation>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="徐国士 青岛徐国士医疗美容诊所" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wzr-e0-AWy">
+                        <rect key="frame" x="119" y="57" width="190" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="9qr-fB-wR2"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="【全面部整形】限时特惠:逆袭" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHR-Ss-Xe2">
+                        <rect key="frame" x="119" y="15" width="190" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="gRC-gz-SX0"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="jtv-fO-Kex" firstAttribute="leading" secondItem="Wzr-e0-AWy" secondAttribute="leading" id="6Fw-a4-CPh"/>
+                    <constraint firstItem="Arq-5a-vP8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="7" id="7jp-qO-l2L"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Wzr-e0-AWy" secondAttribute="trailing" constant="3" id="AMO-jz-GXH"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="jtv-fO-Kex" secondAttribute="trailing" constant="3" id="AjS-m2-RCs"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Arq-5a-vP8" secondAttribute="bottom" constant="7" id="E6p-vb-maI"/>
+                    <constraint firstItem="Myc-57-rrl" firstAttribute="top" secondItem="wHR-Ss-Xe2" secondAttribute="bottom" constant="1" id="HuY-Yx-QhZ"/>
+                    <constraint firstItem="wHR-Ss-Xe2" firstAttribute="top" secondItem="Arq-5a-vP8" secondAttribute="top" id="IAK-yt-gQC"/>
+                    <constraint firstItem="Myc-57-rrl" firstAttribute="leading" secondItem="wHR-Ss-Xe2" secondAttribute="leading" id="IRM-9d-OG5"/>
+                    <constraint firstItem="Wzr-e0-AWy" firstAttribute="leading" secondItem="Myc-57-rrl" secondAttribute="leading" id="N3K-tg-dCy"/>
+                    <constraint firstItem="jtv-fO-Kex" firstAttribute="top" secondItem="Wzr-e0-AWy" secondAttribute="bottom" constant="1" id="N4F-Pk-YWD"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="blN-hS-ewU" secondAttribute="trailing" constant="3" id="SLK-FT-Rke"/>
+                    <constraint firstItem="Arq-5a-vP8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="2" id="X9O-gL-75h"/>
+                    <constraint firstItem="blN-hS-ewU" firstAttribute="leading" secondItem="jtv-fO-Kex" secondAttribute="leading" id="dKY-tx-c5z"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Myc-57-rrl" secondAttribute="trailing" constant="3" id="hJV-cj-HVL"/>
+                    <constraint firstItem="Wzr-e0-AWy" firstAttribute="top" secondItem="Myc-57-rrl" secondAttribute="bottom" constant="1" id="pNV-KN-aQv"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="blN-hS-ewU" secondAttribute="trailing" constant="151" id="sai-6B-lJ9"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="wHR-Ss-Xe2" secondAttribute="trailing" constant="3" id="tCk-0z-7Uh"/>
+                    <constraint firstItem="wHR-Ss-Xe2" firstAttribute="leading" secondItem="Arq-5a-vP8" secondAttribute="trailing" constant="10" id="wFV-xc-dQg"/>
+                    <constraint firstItem="blN-hS-ewU" firstAttribute="top" secondItem="jtv-fO-Kex" secondAttribute="bottom" constant="1" id="yR4-eq-KhC"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="sai-6B-lJ9"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="addres" destination="Wzr-e0-AWy" id="wUi-WP-Df8"/>
+                <outlet property="introductionLB" destination="Myc-57-rrl" id="wSK-O6-Kpq"/>
+                <outlet property="number" destination="jtv-fO-Kex" id="bVv-Lr-V8o"/>
+            </connections>
+            <point key="canvasLocation" x="586" y="259.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="sun" width="178" height="110"/>
+    </resources>
+</document>

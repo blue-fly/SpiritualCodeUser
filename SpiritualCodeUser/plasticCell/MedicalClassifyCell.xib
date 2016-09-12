@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MedicalClassifyCell" rowHeight="125" id="KGk-i7-Jjw" customClass="MedicalClassifyCell">
+            <rect key="frame" x="0.0" y="0.0" width="432" height="188"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="432" height="187"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ar-K5-bQM">
+                        <rect key="frame" x="212" y="0.0" width="1" height="187"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="1" id="dWo-3L-nU0"/>
+                        </constraints>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HVy-37-bng">
+                        <rect key="frame" x="0.0" y="8" width="209" height="179"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <state key="normal" image="活动"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vK9-dY-0My">
+                        <rect key="frame" x="216" y="8" width="216" height="179"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <state key="normal" image="韩国"/>
+                    </button>
+                </subviews>
+                <color key="backgroundColor" red="0.94901960784313721" green="0.96470588235294119" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstItem="1ar-K5-bQM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="2GX-Aa-Hfk"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="vK9-dY-0My" secondAttribute="trailing" constant="-8" id="7cj-jh-vto"/>
+                    <constraint firstItem="1ar-K5-bQM" firstAttribute="leading" secondItem="HVy-37-bng" secondAttribute="trailing" constant="3" id="Du8-yM-pj5"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="1ar-K5-bQM" secondAttribute="bottom" constant="-8" id="IJL-az-Oum"/>
+                    <constraint firstItem="HVy-37-bng" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="IrH-5l-sSK"/>
+                    <constraint firstItem="vK9-dY-0My" firstAttribute="leading" secondItem="1ar-K5-bQM" secondAttribute="trailing" constant="3" id="P1u-Fg-Cnx"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="HVy-37-bng" secondAttribute="bottom" constant="-8" id="lz9-nu-Jts"/>
+                    <constraint firstItem="1ar-K5-bQM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" multiplier="1:2" id="mBC-gn-Avm"/>
+                    <constraint firstItem="vK9-dY-0My" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="oGy-sy-Rl5"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="vK9-dY-0My" secondAttribute="bottom" constant="-8" id="vbT-hd-TGT"/>
+                    <constraint firstItem="HVy-37-bng" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="xxS-Xt-vEO"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="discountBth" destination="HVy-37-bng" id="Q9c-DB-rXG"/>
+                <outlet property="hanguoBth" destination="vK9-dY-0My" id="e0k-GO-WIK"/>
+            </connections>
+            <point key="canvasLocation" x="533" y="167"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="活动" width="253" height="231"/>
+        <image name="韩国" width="253" height="231"/>
+    </resources>
+</document>
