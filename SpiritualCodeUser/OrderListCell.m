@@ -26,6 +26,10 @@
         
         _nameLB.text = _indentModel.articleModel.title;
         _priceLB.text =    [NSString stringWithFormat:@"%@", _indentModel.unitprice];
+        _payLB.text =  [NSString stringWithFormat:@"%@", _indentModel.unitprice];
+        _numberLB.text = [NSString stringWithFormat:@"%@", _indentModel.procount];
+
+
 
            }
     

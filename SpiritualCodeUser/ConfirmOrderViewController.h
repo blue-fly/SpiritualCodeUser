@@ -13,12 +13,18 @@
 @property (nonatomic, copy) NSString *subject;
 @property (nonatomic, copy) NSString *body;
 @property (nonatomic, copy) NSString *orderId;
+
+
 @end
 
 
 
 @interface ConfirmOrderViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *priceLB;
+@property (weak, nonatomic) IBOutlet UILabel *pricecyLB;
 
+@property (weak, nonatomic) IBOutlet UILabel *subscribePrice;
+@property (weak, nonatomic) IBOutlet UIButton *phoneLB;
 @property (weak, nonatomic) IBOutlet UILabel *headLB;
 - (instancetype)initWithHeadName:(NSString *)headName;
 

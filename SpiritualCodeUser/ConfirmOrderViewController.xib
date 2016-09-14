@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -9,6 +9,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ConfirmOrderViewController">
             <connections>
                 <outlet property="headLB" destination="xU5-UH-QlQ" id="dy4-ff-lOC"/>
+                <outlet property="phoneLB" destination="2gC-9B-kjd" id="pDU-pH-hoc"/>
+                <outlet property="priceLB" destination="KqR-8J-Ik2" id="R1c-4x-brt"/>
+                <outlet property="pricecyLB" destination="T5T-vj-gO3" id="2sV-G0-KJD"/>
+                <outlet property="subscribePrice" destination="ICJ-hJ-TnZ" id="7q2-oF-2QA"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -182,7 +186,7 @@
                             <color key="textColor" red="0.90588235289999997" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="到院再付：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hjj-WP-GGG">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hjj-WP-GGG">
                             <rect key="frame" x="20" y="32" width="75" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="ZM2-v4-Lpb"/>
@@ -192,7 +196,7 @@
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥56000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Y8-DS-v3V">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Y8-DS-v3V">
                             <rect key="frame" x="98" y="32" width="120" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="120" id="RI7-t0-XYd"/>
@@ -242,7 +246,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" red="1" green="0.02997432194" blue="0.0021401911659999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.0" green="0.94901960784313721" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="zEo-5K-080" firstAttribute="top" secondItem="slR-nR-u9O" secondAttribute="top" constant="30" id="4GI-oq-2gN"/>
                         <constraint firstItem="hYy-Za-DxJ" firstAttribute="centerX" secondItem="slR-nR-u9O" secondAttribute="centerX" id="8w4-Xq-fE5"/>
@@ -370,7 +374,7 @@
                 <constraint firstItem="fHp-uq-R8R" firstAttribute="top" secondItem="bKf-Zf-WzZ" secondAttribute="bottom" constant="14" id="wVg-je-qph"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
-            <point key="canvasLocation" x="292" y="212"/>
+            <point key="canvasLocation" x="220" y="176"/>
         </view>
     </objects>
     <resources>

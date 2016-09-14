@@ -17,15 +17,17 @@
 #import "PlasticModel.h"
 #import "ConfirmPayOrderViewController.h"
 @implementation Product
+
 @end
 @interface ConfirmOrderViewController ()
+
 {
     NSString *_headName;
     NSDictionary *_stepDicModel;
 }
 
 @property (strong, nonatomic) DetailedViewController *detailedVC;
-
+@property (nonatomic, strong) Hos2Model *hos2Model;
 @end
 
 @implementation ConfirmOrderViewController
@@ -34,7 +36,11 @@
     [super viewDidLoad];
     
     self.headLB.text = _headName;
-    NSLog(@"pioneer  %@",_stepDicModel);
+    _priceLB.text = _hos2Model.appointprice;
+    _pricecyLB.text = _hos2Model.appointprice;
+    _subscribePrice.text = _hos2Model.appointprice;
+    [_phoneLB setTitle:_hos2Model.userPhone forState:UIControlStateNormal];
+
     
     }
 
@@ -49,18 +55,14 @@
 - (instancetype)initWithDictionryWithModel:(NSDictionary *)modelDic {
     if (self = [super init]) {
         _stepDicModel = modelDic;
-        Hos2Model *hos2Model = modelDic[NSStringFromClass([Hos2Model class])];
-        NSLog(@"%@", hos2Model.categoryModel.ID);
-        _headName = hos2Model.title;
+        self.hos2Model = modelDic[NSStringFromClass([Hos2Model class])];
+        _headName = _hos2Model.title;
         
         
         BOOL isMainPage = [modelDic[@"isMainPage"] boolValue];
         if (isMainPage) {
-            
-
         PlasticModel *plasticModel = modelDic[NSStringFromClass([PlasticModel class])]
         ;
-        NSLog(@"%@",plasticModel);
         _headName = plasticModel.title;
         }
         
@@ -83,6 +85,7 @@
 
     
     ConfirmPayOrderViewController *orVC = [[ConfirmPayOrderViewController alloc]initWithDictionryWithModel:_stepDicModel];
+//    orVC.orderNumber = [self generateTradeNO];
     NSLog(@"tagId %@",[[_stepDicModel[@"Hos2Model"] categoryModel] ID]);
     [self.navigationController pushViewController:orVC animated:YES];
 }
@@ -92,21 +95,21 @@
 #pragma mark   ==============产生随机订单号==============
 
 
-- (NSString *)generateTradeNO
-{
-    static int kNumber = 15;
-    
-    NSString *sourceStr = @"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    NSMutableString *resultStr = [[NSMutableString alloc] init];
-    srand((unsigned)time(0));
-    for (int i = 0; i < kNumber; i++)
-    {
-        unsigned index = rand() % [sourceStr length];
-        NSString *oneStr = [sourceStr substringWithRange:NSMakeRange(index, 1)];
-        [resultStr appendString:oneStr];
-    }
-    return resultStr;
-}
+//- (NSString *)generateTradeNO
+//{
+//    static int kNumber = 15;
+//    
+//    NSString *sourceStr = @"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+//    NSMutableString *resultStr = [[NSMutableString alloc] init];
+//    srand((unsigned)time(0));
+//    for (int i = 0; i < kNumber; i++)
+//    {
+//        unsigned index = rand() % [sourceStr length];
+//        NSString *oneStr = [sourceStr substringWithRange:NSMakeRange(index, 1)];
+//        [resultStr appendString:oneStr];
+//    }
+//    return resultStr;
+//}
 
 
 

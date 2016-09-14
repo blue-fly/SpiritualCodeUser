@@ -22,6 +22,9 @@
 @property (nonatomic, copy) NSString *posid;
 @property (nonatomic, copy) NSString *hits;
 @property (nonatomic, copy) NSString *user;
+@property (nonatomic, copy) NSString *appointprice;
+@property (nonatomic, copy) NSString *busprice;
 @property (nonatomic, strong) Hos22Model *officeModel;
 @property (nonatomic, strong) Hos33Model *categoryModel;
+@property (nonatomic, copy) NSString *userPhone;
 @end

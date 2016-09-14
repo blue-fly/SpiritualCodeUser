@@ -15,6 +15,8 @@
 #import "NSObject+EaseMobAddDelegate.h"
 #import "ParticularViewController.h"
 #import "MyLocationViewController.h"
+#import "DetailedViewController.h"
+#import "InfoViewController.h"
 //#import "EaseMessageViewController.h"
 #import "EaseMessageReadManager.h"
 
@@ -235,10 +237,19 @@
 #pragma mark - 点击头像跳转
 
 - (void)avatarViewSelcted:(id<IMessageModel>)model {
+     BOOL isMainPage = [_stepDicModel[@"isMainPage"] boolValue];
+    
+    if (isMainPage) {
+        
+        ParticularViewController *detaileVC = [[ParticularViewController alloc] initWithDictionryWithModel:_stepDicModel];
+          [self.navigationController pushViewController:detaileVC animated:YES];
+        
+    }else {
+    
     
     ParticularViewController *particVC = [[ParticularViewController alloc] initWithDictionryWithModel:_stepDicModel];
     [self.navigationController pushViewController:particVC animated:YES];
-    
+    }
 }
 
 

@@ -94,6 +94,7 @@
 		BCF7B9D71D30B31A006C6162 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF7B9D61D30B31A006C6162 /* RegisterViewController.m */; };
 		BCF7B9DA1D30E091006C6162 /* NSString+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF7B9D91D30E091006C6162 /* NSString+Utils.m */; };
 		BCF7B9DD1D30FC0A006C6162 /* AppDelegate+EaseMob.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF7B9DC1D30FC0A006C6162 /* AppDelegate+EaseMob.m */; };
+		BE0279341D88FE5E00554704 /* singleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0279331D88FE5E00554704 /* singleModel.m */; };
 		BE17C7091D6E8575001ADFE3 /* ButtonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE17C7071D6E8575001ADFE3 /* ButtonTableViewCell.m */; };
 		BE17C70A1D6E8575001ADFE3 /* ButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE17C7081D6E8575001ADFE3 /* ButtonTableViewCell.xib */; };
 		BE17C70E1D6EC9E9001ADFE3 /* MIssViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE17C70C1D6EC9E9001ADFE3 /* MIssViewController.m */; };
@@ -172,6 +173,12 @@
 		BE5191CF1D609A0100B86E7E /* openssl_wrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5191C01D609A0100B86E7E /* openssl_wrapper.m */; };
 		BE5191D01D609A0100B86E7E /* RSADataSigner.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5191C21D609A0100B86E7E /* RSADataSigner.m */; };
 		BE5191D11D609A0100B86E7E /* RSADataVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5191C41D609A0100B86E7E /* RSADataVerifier.m */; };
+		BE54F1761D87938200FD8392 /* Indent4Model.m in Sources */ = {isa = PBXBuildFile; fileRef = BE54F1751D87938200FD8392 /* Indent4Model.m */; };
+		BE54F17F1D87C45000FD8392 /* CollectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE54F17E1D87C45000FD8392 /* CollectModel.m */; };
+		BE54F1821D87C8C400FD8392 /* Collect1Model.m in Sources */ = {isa = PBXBuildFile; fileRef = BE54F1811D87C8C400FD8392 /* Collect1Model.m */; };
+		BE54F1851D87F09900FD8392 /* HosPlasticModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE54F1841D87F09900FD8392 /* HosPlasticModel.m */; };
+		BE54F1891D87F35C00FD8392 /* HosPlasticTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE54F1871D87F35C00FD8392 /* HosPlasticTableViewCell.m */; };
+		BE54F18A1D87F35C00FD8392 /* HosPlasticTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE54F1881D87F35C00FD8392 /* HosPlasticTableViewCell.xib */; };
 		BE7DD1AC1D3C9F6A0076B4D9 /* HospitalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7DD1AA1D3C9F6A0076B4D9 /* HospitalCell.m */; };
 		BE7DD1F61D3CCA1A0076B4D9 /* ConditionView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7DD1F51D3CCA1A0076B4D9 /* ConditionView.m */; };
 		BE7DD1FA1D3DBB620076B4D9 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7DD1F81D3DBB620076B4D9 /* MyViewController.m */; };
@@ -414,6 +421,8 @@
 		BCF7B9D91D30E091006C6162 /* NSString+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utils.m"; sourceTree = "<group>"; };
 		BCF7B9DB1D30FC0A006C6162 /* AppDelegate+EaseMob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+EaseMob.h"; sourceTree = "<group>"; };
 		BCF7B9DC1D30FC0A006C6162 /* AppDelegate+EaseMob.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+EaseMob.m"; sourceTree = "<group>"; };
+		BE0279321D88FE5E00554704 /* singleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = singleModel.h; sourceTree = "<group>"; };
+		BE0279331D88FE5E00554704 /* singleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = singleModel.m; sourceTree = "<group>"; };
 		BE17C7061D6E8575001ADFE3 /* ButtonTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ButtonTableViewCell.h; path = ../PinYin/ButtonTableViewCell.h; sourceTree = "<group>"; };
 		BE17C7071D6E8575001ADFE3 /* ButtonTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ButtonTableViewCell.m; path = ../PinYin/ButtonTableViewCell.m; sourceTree = "<group>"; };
 		BE17C7081D6E8575001ADFE3 /* ButtonTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ButtonTableViewCell.xib; path = ../PinYin/ButtonTableViewCell.xib; sourceTree = "<group>"; };
@@ -615,6 +624,17 @@
 		BE5191C21D609A0100B86E7E /* RSADataSigner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSADataSigner.m; sourceTree = "<group>"; };
 		BE5191C31D609A0100B86E7E /* RSADataVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSADataVerifier.h; sourceTree = "<group>"; };
 		BE5191C41D609A0100B86E7E /* RSADataVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSADataVerifier.m; sourceTree = "<group>"; };
+		BE54F1741D87938200FD8392 /* Indent4Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Indent4Model.h; sourceTree = "<group>"; };
+		BE54F1751D87938200FD8392 /* Indent4Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Indent4Model.m; sourceTree = "<group>"; };
+		BE54F17D1D87C45000FD8392 /* CollectModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectModel.h; sourceTree = "<group>"; };
+		BE54F17E1D87C45000FD8392 /* CollectModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectModel.m; sourceTree = "<group>"; };
+		BE54F1801D87C8C400FD8392 /* Collect1Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Collect1Model.h; sourceTree = "<group>"; };
+		BE54F1811D87C8C400FD8392 /* Collect1Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Collect1Model.m; sourceTree = "<group>"; };
+		BE54F1831D87F09900FD8392 /* HosPlasticModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HosPlasticModel.h; sourceTree = "<group>"; };
+		BE54F1841D87F09900FD8392 /* HosPlasticModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HosPlasticModel.m; sourceTree = "<group>"; };
+		BE54F1861D87F35C00FD8392 /* HosPlasticTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HosPlasticTableViewCell.h; sourceTree = "<group>"; };
+		BE54F1871D87F35C00FD8392 /* HosPlasticTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HosPlasticTableViewCell.m; sourceTree = "<group>"; };
+		BE54F1881D87F35C00FD8392 /* HosPlasticTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HosPlasticTableViewCell.xib; sourceTree = "<group>"; };
 		BE7DD1A91D3C9F6A0076B4D9 /* HospitalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HospitalCell.h; path = hostipal/HospitalCell.h; sourceTree = "<group>"; };
 		BE7DD1AA1D3C9F6A0076B4D9 /* HospitalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HospitalCell.m; path = hostipal/HospitalCell.m; sourceTree = "<group>"; };
 		BE7DD1F41D3CCA1A0076B4D9 /* ConditionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConditionView.h; sourceTree = "<group>"; };
@@ -1106,6 +1126,8 @@
 				BEA409101D75762000A54D91 /* Plastic4Model.m */,
 				BE4280AD1D645CF9003678C2 /* ComfirmModel.h */,
 				BE4280AE1D645CF9003678C2 /* ComfirmModel.m */,
+				BE54F1831D87F09900FD8392 /* HosPlasticModel.h */,
+				BE54F1841D87F09900FD8392 /* HosPlasticModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1186,6 +1208,8 @@
 				BE4280B11D648D38003678C2 /* Hos33Model.m */,
 				BEA409121D75A42100A54D91 /* ParticularModel.h */,
 				BEA409131D75A42100A54D91 /* ParticularModel.m */,
+				BE0279321D88FE5E00554704 /* singleModel.h */,
+				BE0279331D88FE5E00554704 /* singleModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1353,6 +1377,12 @@
 				BE4280BB1D65DB5B003678C2 /* Indent2Model.m */,
 				BE4280BD1D65DB69003678C2 /* Indent3Model.h */,
 				BE4280BE1D65DB69003678C2 /* Indent3Model.m */,
+				BE54F1741D87938200FD8392 /* Indent4Model.h */,
+				BE54F1751D87938200FD8392 /* Indent4Model.m */,
+				BE54F17D1D87C45000FD8392 /* CollectModel.h */,
+				BE54F17E1D87C45000FD8392 /* CollectModel.m */,
+				BE54F1801D87C8C400FD8392 /* Collect1Model.h */,
+				BE54F1811D87C8C400FD8392 /* Collect1Model.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1530,6 +1560,9 @@
 				BE17C7201D702B12001ADFE3 /* DiscountTableViewCell.h */,
 				BE17C7211D702B12001ADFE3 /* DiscountTableViewCell.m */,
 				BE17C7221D702B12001ADFE3 /* DiscountTableViewCell.xib */,
+				BE54F1861D87F35C00FD8392 /* HosPlasticTableViewCell.h */,
+				BE54F1871D87F35C00FD8392 /* HosPlasticTableViewCell.m */,
+				BE54F1881D87F35C00FD8392 /* HosPlasticTableViewCell.xib */,
 			);
 			path = plasticCell;
 			sourceTree = "<group>";
@@ -1706,6 +1739,7 @@
 				0752AEBA1D8107890022EF38 /* radio_checked.png in Resources */,
 				0752AEBC1D8107890022EF38 /* radio_unchecked.png in Resources */,
 				0752AEBD1D8107890022EF38 /* radio_unchecked@2x.png in Resources */,
+				BE54F18A1D87F35C00FD8392 /* HosPlasticTableViewCell.xib in Resources */,
 				BE91D83C1D643708001314A2 /* ConfirmPayOrderViewController.xib in Resources */,
 				BE182D1A1D6BF39A002A8112 /* AddresTableViewCell.xib in Resources */,
 				BE89886E1D4F2A25000182B8 /* TwoTableViewCell.xib in Resources */,
@@ -1829,6 +1863,7 @@
 				BE7DD24B1D41EEB80076B4D9 /* TLCityHeaderView.m in Sources */,
 				BE91D8341D62DE87001314A2 /* SeekViewController.m in Sources */,
 				BCA240251D2F7C34001FC84B /* ViewController.m in Sources */,
+				BE54F17F1D87C45000FD8392 /* CollectModel.m in Sources */,
 				07EAD71A1D7FA9BB00B5E9C5 /* NSObject+Runtime.m in Sources */,
 				07AEC4AE1D815CD10019DEC4 /* UIControl+ActionBlocks.m in Sources */,
 				BE7DD2171D40670B0076B4D9 /* PinYinForObjc.m in Sources */,
@@ -1846,6 +1881,7 @@
 				BE4280B21D648D38003678C2 /* Hos33Model.m in Sources */,
 				BE7DD28D1D4615970076B4D9 /* SetViewController.m in Sources */,
 				BE4CCCB41D606D0F006B7238 /* OrderListCell.m in Sources */,
+				BE54F1821D87C8C400FD8392 /* Collect1Model.m in Sources */,
 				BE7DD2121D40670B0076B4D9 /* ChineseInclude.m in Sources */,
 				BCA240681D2F873B001FC84B /* ExpertCell.m in Sources */,
 				BE7DD2931D46160D0076B4D9 /* IndentViewController.m in Sources */,
@@ -1853,6 +1889,7 @@
 				BE26784E1D54341200612E26 /* HeadTableViewCell.m in Sources */,
 				BE7DD2A21D4775580076B4D9 /* LiuXSegmentView.m in Sources */,
 				BE7DD2561D430E8D0076B4D9 /* HosIntroduceTableViewCell.m in Sources */,
+				BE54F1761D87938200FD8392 /* Indent4Model.m in Sources */,
 				BE2678491D51BA9500612E26 /* ConfirmOrderViewController.m in Sources */,
 				BEA409111D75762000A54D91 /* Plastic4Model.m in Sources */,
 				BE4280BF1D65DB69003678C2 /* Indent3Model.m in Sources */,
@@ -1875,6 +1912,7 @@
 				07AEC4A21D8151880019DEC4 /* MASConstraint.m in Sources */,
 				07BEE5F01D87AA0A00F65CC7 /* TZTestCell.m in Sources */,
 				BC64766C1D323D300020BDF9 /* EMBubbleView+Gif.m in Sources */,
+				BE54F1851D87F09900FD8392 /* HosPlasticModel.m in Sources */,
 				BCF7B9DA1D30E091006C6162 /* NSString+Utils.m in Sources */,
 				07AEC4A91D8151880019DEC4 /* View+MASAdditions.m in Sources */,
 				BE7DD24A1D41EEB80076B4D9 /* TLCityGroupCell.m in Sources */,
@@ -1913,6 +1951,7 @@
 				BEA75ED61D56D55400E6E95D /* MedicalClassifyCell.m in Sources */,
 				BCA2403C1D2F8501001FC84B /* ModelTool.m in Sources */,
 				BE182D0E1D6BEC0A002A8112 /* ParticularViewController.m in Sources */,
+				BE54F1891D87F35C00FD8392 /* HosPlasticTableViewCell.m in Sources */,
 				BE7DD1F61D3CCA1A0076B4D9 /* ConditionView.m in Sources */,
 				071217081D80F5BA0089A460 /* InfoViewController.m in Sources */,
 				BE2678581D54351C00612E26 /* DataTableViewCell.m in Sources */,
@@ -1933,6 +1972,7 @@
 				079634CA1D83A47A005AC819 /* SVIndefiniteAnimatedView.m in Sources */,
 				BE7DD2901D4615E00076B4D9 /* DatumViewController.m in Sources */,
 				BE7DD2141D40670B0076B4D9 /* HanyuPinyinOutputFormat.m in Sources */,
+				BE0279341D88FE5E00554704 /* singleModel.m in Sources */,
 				BCA240221D2F7C34001FC84B /* AppDelegate.m in Sources */,
 				0744CF5C1D829C9900EAB884 /* TZImagePickerController.m in Sources */,
 				07AEC4A61D8151880019DEC4 /* MASViewConstraint.m in Sources */,

@@ -15,5 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *addresLB;
 @property (weak, nonatomic) IBOutlet UILabel *priceLB;
 @property (weak, nonatomic) IBOutlet UILabel *indentLB;
+@property (weak, nonatomic) IBOutlet UILabel *payLB;
+@property (weak, nonatomic) IBOutlet UILabel *numberLB;
 
 @end

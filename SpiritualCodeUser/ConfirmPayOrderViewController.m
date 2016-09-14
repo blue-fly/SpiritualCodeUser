@@ -33,6 +33,9 @@
     NSDictionary *_stepDicModel;
 }
 
+@property (weak, nonatomic) IBOutlet UILabel *orderNOLB;
+@property (weak, nonatomic) IBOutlet UILabel *priceLB;
+
 @property (copy, nonatomic)NSString *userID;
 @property (copy, nonatomic)NSString *officeID;
 @property (copy, nonatomic)NSString *articleID;
@@ -40,6 +43,7 @@
 @property (copy, nonatomic)NSString *unitprice;
 @property (copy, nonatomic)NSString *totalprice;
 @property (copy, nonatomic)NSString *orderNO;
+@property (nonatomic, strong) Hos2Model *hos2Model;
 @property (assign, nonatomic) BOOL isHave;
 
 @end
@@ -51,6 +55,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.hos2Model = _stepDicModel[NSStringFromClass([Hos2Model class])];
+    _priceLB.text = _hos2Model.appointprice;
+    _orderNOLB.text = [self generateOrderNO];
     
     _isHave = nil;
     
@@ -146,7 +153,7 @@
 #define NOTIFY_URL @"http://wxpay.weixin.qq.com/pub_v2/pay/notify.v2.php"
 
 // 交易价格1表示0.01元，10表示0.1元
-#define PRICE @"1"
+//#define PRICE @"1"
 - (IBAction)weixinPay:(id)sender {
     
     _isHave = NO;
@@ -186,7 +193,7 @@
         Product *product = [Product new];
         product.subject = @"1";//商品名称
         product.body = @"我是测试数据";
-        product.price = 0.01;
+        product.price = [_hos2Model.appointprice floatValue];
         NSString *partner = @"2088421371583004";
         NSString *seller = @"13698692223@163.com";//必须是商家的收款账号才能成功
         NSString *privateKey = @"MIICeAIBADANBgkqhkiG9w0BAQEFAASCAmIwggJeAgEAAoGBALGxQhn0GC53ZfvVgdNXwXu/PsL5mbb4QnFULo4PONyrsY02yIC0nlsZbZRpLbV6pZVZ8ZCuthz0A9byF6I72dXK8BagGfY9Da2u3/Y9K0ioz2sVbn5OoaQOCUflPJhNkbx4xM7q1WcDKuWq1QMqyMf5LSox3JHbSJy2lWQDx9u7AgMBAAECgYB4VZBsPw+5OAaKmzaGR2GySftY0uu0Kz/ju5yje8+IMYXWGgmCj87F5tx8qxXXVq2YDQc4cfjGdsG66Mv0hA+qRSovveBYn/apnaMYkjk4udyfbwT6s0Uz5A2KL0IgS1wCJtTl11zwrykTszXX8NQV/HSAtA1Ci8XXhUbrT8JREQJBAOcsgmQTADFHwSX/raBsoI3It5ohZjBxg2lQCyXH2qaPyjuV83/nlCjo/tuNl9MlpX+zVfe/7zDN7bHcvi+Zzj8CQQDExmxae3Zfe+YGyirjLKwIfcJC96uSghXoVDyGKlitzPmMULwtFyVkwECyusBt9avp7ZOe/BOoOjkxVEp4PQuFAkEA4BLAgIf6U8odadueTDV+mm/Hp1pgVuxwWBAB/ijtwyz09TSvxXaOoejVv7JLS5reBB2sYmxkSIYSs6gnoLQQuQJBAMFSfHOs5pBKxqSXDOmiIuY4v5lRgKPw4BsgX1Ik2njub6HWU/osylUguK+f4Jxnh93MxoKk/58AjN4VBRD6UI0CQQCTT6TetvS0/YCtxBgBi2Qzp+oy2y4v9oiXULFriwWlKwDM22f9EKq5uWnx13TZYauGzpc5gdOgPGq3z0a7FqaJ";
@@ -254,7 +261,7 @@
                                                 partner_id:WX_PartnerKey
                                                       body:@"充值"
                                               out_trade_no:orderno
-                                                 total_fee:PRICE
+                                                 total_fee:_hos2Model.appointprice
                                           spbill_create_ip:addressIP
                                                 notify_url:NOTIFY_URL
                                                 trade_type:TRADE_TYPE];
@@ -360,7 +367,7 @@
 - (void)ToGenerateOrders {
     
     Hos2Model *hos2Model = _stepDicModel[NSStringFromClass([Hos2Model class])];
-    HosModel *hosModel = _stepDicModel[NSStringFromClass([HosModel class])];
+//    HosModel *hosModel = _stepDicModel[NSStringFromClass([HosModel class])];
     PlasticModel *plasticModel = _stepDicModel[NSStringFromClass([PlasticModel class])]
     ;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -381,6 +388,9 @@
     BOOL isMainPage = [_stepDicModel[@"isMainPage"] boolValue];
     
     self.categoryID = hos2Model.categoryModel.ID;
+    self.articleID = hos2Model.ID;
+    self.officeID = hos2Model.officeModel.ID;
+    
     if (isMainPage) {
         self.categoryID = plasticModel.categoryModel.ID;
         //医院ID
@@ -390,11 +400,11 @@
     }
     
     //单价
-    self.unitprice = @"1000";
+    self.unitprice = hos2Model.appointprice;
     //原价
-    self.totalprice = @"2000";
+    self.totalprice = hos2Model.appointprice;
     //订单号
-    self.orderNO = [self generateOrderNO];
+    self.orderNO = _orderNOLB.text;
     
       NSString *urlString = @"http://121.42.165.80/a/sys/order/save";
     
@@ -402,6 +412,7 @@
     
 
      NSDictionary *param = [comformModel confirmParam];
+    
     NSLog(@"param   %@",param);
     
 //    NSDictionary *dic = @{@"category.id":_categoryID,@"user.id":_userID,@"office.id":_officeID,@"article.id":_articleID,@"orderNo":_orderNO,@"orderStatus":@"0",@"unitprice":@"100",@"procount":@"2",@"totalprice":@"200",@"orderFlag":@"1",@"proDesc":@"充值"};

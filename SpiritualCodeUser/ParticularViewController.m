@@ -25,8 +25,11 @@
 #import "HosIntroduceTableViewCell.h"
 #import "PhotoCollectionViewCell.h"
 #import "HosModel.h"
-
+#import "HosPlasticModel.h"
+#import "PlasticModel.h"
 #import "InfoViewController.h"
+#import "Hos2Model.h"
+#import "singleModel.h"
 
 
 @interface ParticularViewController ()<UMSocialUIDelegate>
@@ -45,9 +48,9 @@
 @property (nonatomic, assign) NSString *userID;
 @property (nonatomic, assign) NSString *patientId;
 
-@property (nonatomic, assign) NSArray *dataArr;
+@property (nonatomic, strong) NSArray *dataArr;
 @property (nonatomic, assign) NSString *officeID;
-
+@property (nonatomic, assign) BOOL isMainPage;
 
 @end
 
@@ -73,7 +76,8 @@
 
      self.pioneerDelegate = self;
     
-    
+     self.isMainPage = [_setModel[@"isMainPage"] boolValue];
+
     self.dataArr =[NSArray array];
     
     [self log_data];
@@ -223,9 +227,14 @@
     
 }
 
-
+//判断
 - (void)freshBtuColor {
     
+    if (_isMainPage) {
+        HosPlasticModel *splasticModel = _setModel[NSStringFromClass([HosPlasticModel class])];
+        
+        self.patientId = splasticModel.ID;
+    }
     
      HosModel *hosModel = _setModel[NSStringFromClass([HosModel class])];
     
@@ -235,7 +244,6 @@
     self.userID = [defaults objectForKey:@"jeesite.session.usserid"];
 
     self.patientId = hosModel.ID;
-    
     
     
     NSDictionary *dic = @{@"user.id":self.patientId,@"patientId":self.userID};
@@ -267,25 +275,25 @@
 }
 
 - (void)log_data {
+   
+    if (_isMainPage) {
+        HosPlasticModel *model = _setModel[NSStringFromClass([HosPlasticModel class])];
+        self.officeID = model.ID;
+        NSLog(@"%@", model.ID);
+
+    }
+    
      HosModel *hosModel = _setModel[NSStringFromClass([HosModel class])];
     self.officeID = hosModel.ID;
     
  [[HTTPManager sharedHTTPManager] httpManager:[NSString stringWithFormat:@"http://121.42.165.80/a/noauth/cms/article/list?office.id=%@",self.officeID] parameter:nil requestType:HTTPTypePost complectionBlock:^(id responseData, NSError *error) {
      
-     
-     
-     NSLog(@"%@",responseData);
-     NSLog(@"xxxxxx%@", self.officeID);
-     self.dataArr = [HosModel getModelArrayWithDictionaryArray:responseData];
-//
-     [self performSelectorOnMainThread:@selector(redaArr) withObject:nil waitUntilDone:YES];
-//
-//    
-//
-//     NSLog(@"%@", self.dataArr);
+     self.dataArr = [Hos2Model getModelArrayWithDictionaryArray:responseData];
 
-     
-     
+    
+     [self performSelectorOnMainThread:@selector(redaArr) withObject:nil waitUntilDone:YES];
+
+    
  }];
     
     
@@ -317,26 +325,44 @@
     return _dataArr.count + 8;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
 
-    HosModel *hosModel = _setModel[NSStringFromClass([HosModel class])];
+  
+        HosPlasticModel *plasticModel = _setModel[NSStringFromClass([HosPlasticModel class])];
     
-    
+         HosModel *hosModel = _setModel[NSStringFromClass([HosModel class])];
+
+
       if (indexPath.row == 0 || indexPath.row == 2||indexPath.row ==5) {
           TwoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TwoTableViewCell"];
           return cell;
           
       }
       else if (indexPath.row == 1) {
+          
           OrganizationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"OrganizationTableViewCell"];
-          cell.nameLB.text = hosModel.name;
+
+          if (_isMainPage) {
+              cell.nameLB.text = plasticModel.name;
+          }else {
+               cell.nameLB.text = hosModel.name;
+          }
+         
           return cell;
+          
       }else if (indexPath.row == 4) {
           PhoneTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PhoneTableViewCell"];
+          if (_isMainPage) {
+              [cell.phoneBth setTitle:plasticModel.primaryPersonID forState:UIControlStateNormal];          }
+          
           return cell;
       }else if (indexPath.row == 3) {
           AddresTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AddresTableViewCell"];
-          [cell.addresBth setTitle:hosModel.address forState:UIControlStateNormal];
+          if (_isMainPage) {
+               [cell.addresBth setTitle:plasticModel.address forState:UIControlStateNormal];
+          }else {
+              [cell.addresBth setTitle:hosModel.address forState:UIControlStateNormal]; 
+          }
+         
           return cell;
           
           
@@ -362,9 +388,16 @@
           
       }else {
           PlasticCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PlasticCell"];
+          NSLog(@"tag tag  %@",_dataArr);
+          Hos2Model *hos2Model = _dataArr[indexPath.row - 8];
+          [_setModel setValue:hos2Model forKey:NSStringFromClass([Hos2Model class])];
+          
+          
+          cell.introductionLB.text = hos2Model.title;
+          cell.addres.text = hos2Model.officeModel.name;
+          cell.priceLB.text = hos2Model.appointprice;
           return cell;
 
-          return nil;
       }
 
   
@@ -402,8 +435,12 @@
         [self.navigationController popViewControllerAnimated:YES];
     }
     
-    if (indexPath.row == 8) {
-        InfoViewController *infoVC = [[InfoViewController alloc] init];
+    if (indexPath.row >= 8) {
+        
+        
+        
+        
+        InfoViewController *infoVC = [[InfoViewController alloc] initWithDictionryWithModel:_setModel];
         
         [self.navigationController pushViewController:infoVC animated:YES];
     }

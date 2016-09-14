@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface SexTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIButton *nvBth;
-@property (weak, nonatomic) IBOutlet UIButton *nanBth;
-@property (nonatomic, assign) BOOL isHave;
+@property (weak, nonatomic) IBOutlet UILabel *nemeLB;
+
+@property (weak, nonatomic) IBOutlet UILabel *addresLB;
+
+@property (weak, nonatomic) IBOutlet UILabel *priceLB;
+
 
 @end

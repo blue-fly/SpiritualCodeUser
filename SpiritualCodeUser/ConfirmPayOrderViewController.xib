@@ -8,6 +8,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ConfirmPayOrderViewController">
             <connections>
+                <outlet property="orderNOLB" destination="shr-Sy-MDc" id="vhb-e1-lzA"/>
+                <outlet property="priceLB" destination="VrJ-QC-JaH" id="HAQ-91-Y9S"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="weixinPay" destination="1la-LN-BM1" id="hIa-bC-0Qj"/>
                 <outlet property="zhifubaoPay" destination="Fjn-0j-L4S" id="M3s-OP-Icl"/>
