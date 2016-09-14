@@ -340,7 +340,7 @@
     } else {
         [PioneerHelper changLoginStatus:NO];
                 //登录失败
-                [self showHint:@"用户名或密码错误" yOffset:50];
+        [self showHint:@"用户名或密码错误" yOffset:50];
 
     }
     

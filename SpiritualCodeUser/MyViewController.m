@@ -26,6 +26,9 @@
 
 #import "UpdateInfoViewController.h"
 #import "UIImageView+WebCache.h"
+
+#import "BeautyViewController.h"
+#import "HTTPManager.h"
 @interface MyViewController ()
 
 @property (strong, nonatomic) NSArray *imageArr; //图片数组
@@ -39,8 +42,11 @@
 
 + (void)initialize {
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.00 green:0.77 blue:0.84 alpha:1.00]];
+    
+    [UINavigationBar appearance].titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont boldSystemFontOfSize:17]};
+//    [self.navigationController.navigationBar.titleTextAttributes=@{NSForegroundColorAttributeName:[UIColorwhiteColor],NSFontAttributeName:[UIFontboldSystemFontOfSize:17]};
 }
-
+     
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -70,9 +76,31 @@
     //取出头像url
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    NSString *url = [defaults objectForKey:@"HeadImageURL"];
+//    NSString *url = [defaults objectForKey:@"HeadImageURL"];
+    NSString *userId = [defaults objectForKey:@"jeesite.session.usserid"];
     
-    [self.headImage sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"touxiang"]];
+
+    
+    //查出昵称
+    [[HTTPManager sharedHTTPManager] httpManager:@"http://121.42.165.80/a/sys/user/get" parameter:@{@"id":userId} requestType:HTTPTypeForm complectionBlock:^(NSDictionary *responseData, NSError *error) {
+        
+        NSLog(@"%@",responseData);
+        
+        //放到主线程中
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            if (responseData[@"name"] != nil) {
+                self.nameLB.text = responseData[@"name"];
+            }
+            
+            
+            [self.headImage sd_setImageWithURL:[NSURL URLWithString:responseData[@"photo"]] placeholderImage:[UIImage imageNamed:@"touxiang"]];
+        });
+        
+        
+        
+    }];
 
     
 }
@@ -91,7 +119,7 @@
 
 - (IBAction)setBth:(id)sender {
     SetViewController *setVC = [SetViewController new];
-    [self.navigationController pushViewController:setVC animated:YES];
+    [self.navigationController pushViewController:setVC animated:NO];
     
 }
 - (IBAction)CollectBTh:(id)sender {
@@ -103,7 +131,9 @@
 //美丽秀
 - (IBAction)showTimeBth:(id)sender {
     
-    
+    BeautyViewController *btVC = [[BeautyViewController alloc] init];
+    self.navigationController.hidesBottomBarWhenPushed = NO;
+    [self.navigationController pushViewController:btVC animated:NO];
     
     
 }

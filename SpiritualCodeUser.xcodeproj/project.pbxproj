@@ -54,6 +54,8 @@
 		07AEC4AA1D8151880019DEC4 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AEC49F1D8151880019DEC4 /* ViewController+MASAdditions.m */; };
 		07AEC4AE1D815CD10019DEC4 /* UIControl+ActionBlocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AEC4AD1D815CD10019DEC4 /* UIControl+ActionBlocks.m */; };
 		07AEC4B11D8198A50019DEC4 /* ClickImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AEC4B01D8198A50019DEC4 /* ClickImage.m */; };
+		07BEE5ED1D87921C00F65CC7 /* BeautyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BEE5EC1D87921C00F65CC7 /* BeautyViewController.m */; };
+		07BEE5F01D87AA0A00F65CC7 /* TZTestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BEE5EF1D87AA0A00F65CC7 /* TZTestCell.m */; };
 		07C2525F1D7EB77D00E1024E /* MyLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C2525E1D7EB77D00E1024E /* MyLocationViewController.m */; };
 		07EAD71A1D7FA9BB00B5E9C5 /* NSObject+Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EAD7191D7FA9BB00B5E9C5 /* NSObject+Runtime.m */; };
 		144980579B34B3D948550D84 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E33DF0F29102C36D0C11100 /* libPods.a */; };
@@ -329,6 +331,10 @@
 		07AEC4AD1D815CD10019DEC4 /* UIControl+ActionBlocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+ActionBlocks.m"; sourceTree = "<group>"; };
 		07AEC4AF1D8198A50019DEC4 /* ClickImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClickImage.h; sourceTree = "<group>"; };
 		07AEC4B01D8198A50019DEC4 /* ClickImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClickImage.m; sourceTree = "<group>"; };
+		07BEE5EB1D87921C00F65CC7 /* BeautyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeautyViewController.h; sourceTree = "<group>"; };
+		07BEE5EC1D87921C00F65CC7 /* BeautyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeautyViewController.m; sourceTree = "<group>"; };
+		07BEE5EE1D87AA0A00F65CC7 /* TZTestCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZTestCell.h; sourceTree = "<group>"; };
+		07BEE5EF1D87AA0A00F65CC7 /* TZTestCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZTestCell.m; sourceTree = "<group>"; };
 		07C2525D1D7EB77D00E1024E /* MyLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLocationViewController.h; sourceTree = "<group>"; };
 		07C2525E1D7EB77D00E1024E /* MyLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLocationViewController.m; sourceTree = "<group>"; };
 		07EAD7181D7FA9BB00B5E9C5 /* NSObject+Runtime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Runtime.h"; sourceTree = "<group>"; };
@@ -1229,6 +1235,8 @@
 		BCA240501D2F85BC001FC84B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				07BEE5EE1D87AA0A00F65CC7 /* TZTestCell.h */,
+				07BEE5EF1D87AA0A00F65CC7 /* TZTestCell.m */,
 				BE29D63A1D5AFC3B002800C4 /* IModelTool.h */,
 				BE29D63B1D5AFC3B002800C4 /* LoginModel.h */,
 				BE29D63C1D5AFC3B002800C4 /* LoginModel.m */,
@@ -1562,6 +1570,8 @@
 				BE7DD29B1D47037A0076B4D9 /* IntegralViewController.m */,
 				0744CF3E1D82718C00EAB884 /* SendFeedbackViewController.h */,
 				0744CF3F1D82718C00EAB884 /* SendFeedbackViewController.m */,
+				07BEE5EB1D87921C00F65CC7 /* BeautyViewController.h */,
+				07BEE5EC1D87921C00F65CC7 /* BeautyViewController.m */,
 			);
 			name = SecondVC;
 			sourceTree = "<group>";
@@ -1854,6 +1864,7 @@
 				0752AEC01D810A650022EF38 /* UIImage+RoundedCorner.m in Sources */,
 				BE4280BC1D65DB5B003678C2 /* Indent2Model.m in Sources */,
 				07AEC4A21D8151880019DEC4 /* MASConstraint.m in Sources */,
+				07BEE5F01D87AA0A00F65CC7 /* TZTestCell.m in Sources */,
 				BC64766C1D323D300020BDF9 /* EMBubbleView+Gif.m in Sources */,
 				BCF7B9DA1D30E091006C6162 /* NSString+Utils.m in Sources */,
 				07AEC4A91D8151880019DEC4 /* View+MASAdditions.m in Sources */,
@@ -1872,6 +1883,7 @@
 				BE2678651D54535A00612E26 /* SexTableViewCell.m in Sources */,
 				BEA75E7A1D55D3E000E6E95D /* PlasticModel.m in Sources */,
 				BE4280A41D644321003678C2 /* XMLDictionary.m in Sources */,
+				07BEE5ED1D87921C00F65CC7 /* BeautyViewController.m in Sources */,
 				BEA75EDE1D57314F00E6E95D /* InformTableViewCell.m in Sources */,
 				BC6476631D323B780020BDF9 /* CustomCell.m in Sources */,
 				BE7DD1AC1D3C9F6A0076B4D9 /* HospitalCell.m in Sources */,
@@ -2073,7 +2085,7 @@
 					"\"${PODS_ROOT}/Headers/Public/UMengSocialCOM\"",
 				);
 				INFOPLIST_FILE = SpiritualCodeUser/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2126,7 +2138,7 @@
 					"\"${PODS_ROOT}/Headers/Public/UMengSocialCOM\"",
 				);
 				INFOPLIST_FILE = SpiritualCodeUser/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

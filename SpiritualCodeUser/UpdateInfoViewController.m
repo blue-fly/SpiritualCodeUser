@@ -13,10 +13,14 @@
 #import "TZImagePickerController.h"
 #import "UpLoadImageHelper.h"
 #import "UIImageView+WebCache.h"
+#import "HTTPManager.h"
+#import <UIViewController+HUD.h>
+#import "UIControl+ActionBlocks.h"
 
 @interface UpdateInfoViewController ()<QRadioButtonDelegate,pioneer_navigationControllerDelegate,TZImagePickerControllerDelegate,UpLoadImageHelperDelegate>
 {
     UpLoadImageHelper *_upload;
+    
 }
 
 @end
@@ -30,6 +34,7 @@
 
     //初始化设置
     [self initView];
+    
     
     
 }
@@ -49,7 +54,6 @@
 
     self.title = @"个人资料";
     
-    
     //取出头像url
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
@@ -58,6 +62,20 @@
     [self.headImage sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"touxiang"]];
     
     
+    // 自定义导航栏左侧按钮
+    UIButton * leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    leftBtn.frame = CGRectMake(0, 7, 30, 30);
+    //    leftBtn.backgroundColor = [UIColor orangeColor];
+    [leftBtn setImage:[UIImage imageNamed:@"bar_back"] forState:UIControlStateNormal];
+    //返回点击事件
+    [leftBtn handleControlEvents:UIControlEventTouchUpInside withBlock:^(id weakSender) {
+        
+        [self.navigationController popViewControllerAnimated:YES];
+        
+    }];
+    
+    UIBarButtonItem * leftItem = [[UIBarButtonItem alloc] initWithCustomView:leftBtn];
+    self.navigationItem.leftBarButtonItem = leftItem;
     
     // 自定义导航栏右侧按钮
     UIButton * rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -128,13 +146,54 @@
 - (void)onTap {
     
     NSLog(@"点击了保存");
+    //上传相关信息
+    //id :jeesite.session.usserid
+    //Photo :HeadImageURL
+    //name :
+    
+    //判断昵称是否为空
+    if (![self.nickNameTextField.text isEqualToString:@""]) {
+        
+        //获取
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSString *userId = [defaults objectForKey:@"jeesite.session.usserid"];
+        NSString *photo = [defaults objectForKey:@"HeadImageURL"];
+        
+        if (photo == NULL) {
+            NSLog(@"请选择头像!");
+            return;
+        }
+        
+        
+        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+        
+        [dict setObject:@"" forKey:@"Email"];
+        [dict setObject:@"" forKey:@"Phone"];
+        [dict setObject:@"" forKey:@"Mobile"];
+        [dict setObject:@"" forKey:@"Remarks"];
+        [dict setObject:photo forKey:@"Photo"];
+        [dict setObject:userId forKey:@"id"];
+        [dict setObject:self.nickNameTextField.text forKey:@"name"];
+        
+        
+        [[HTTPManager sharedHTTPManager] httpManager:@"http://121.42.165.80/a/sys/user/update" parameter:dict requestType:HTTPTypeForm complectionBlock:^(NSDictionary * responseData, NSError *error) {
+            
+            
+            [self showHint:responseData[@"respMsg"] yOffset:50];
+            
+        }];
+        
+        
+        
+        
+    }
 }
 
 
 //点击修改头像
 - (void)updateImage:(UITapGestureRecognizer *)gesture {
     
-    TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:9 delegate:self];
+    TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:1 columnNumber:4 delegate:self];
     
     // You can get the photos by block, the same as by delegate.
     // 你可以通过block或者代理，来得到用户选择的照片.
