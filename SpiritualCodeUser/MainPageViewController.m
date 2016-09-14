@@ -282,11 +282,10 @@
         [cell.nanmeiBth addTarget:self action:@selector(accessAction:) forControlEvents:UIControlEventTouchUpInside];
         [cell.qudouBth addTarget:self action:@selector(accessAction:) forControlEvents:UIControlEventTouchUpInside];
         [cell.qitaBth addTarget:self action:@selector(accessAction:) forControlEvents:UIControlEventTouchUpInside];
-        
-        
-
-        
+    
       cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        
         
         return cell;
            } else if(indexPath.row == 1){
@@ -318,30 +317,40 @@
 
 - (void)accessAction:(UIButton *)sender {
     
+//       _pioneer_types_indexs =  @[@"27",@"10",@"6",@"18",@"24",@"35252cb0ba7f47ee90856b678dd07ef5",@"4d5251416a144293a63824667f12e2d9",@"949c44aedf504e95a74b910c4cd295fd",@"25",@"b5c3ff2030f14e5b879f475d1ddeb21c",@"947248ff36024be7ba2ca3f120b62e1b"];
+    
       PlasticViewController  *plastVC = [[PlasticViewController alloc] init];
     NSUInteger BtnTag = [sender tag];
     if (BtnTag == 1) {
-        plastVC.IDs = @"22";
-    }else if (BtnTag == 2) {
+        self.ID =@"27";
         
-    }else if (BtnTag == 3) {
-        
-    }else if (BtnTag == 4) {
-        
-    }else if (BtnTag == 4) {
-        
-    }else if (BtnTag == 5) {
-        
-    }else if (BtnTag == 6) {
-        
-    }else if (BtnTag == 7) {
-        
-    }else if (BtnTag == 8) {
-        
+    }
+    else if (BtnTag == 2) {
+        self.ID =@"10";
+    }
+    else if (BtnTag == 3) {
+        self.ID =@"6";
+    }
+    else if (BtnTag == 4) {
+        self.ID =@"18";
+    }
+    else if (BtnTag == 5) {
+        self.ID =@"24";
+    }
+    else if (BtnTag == 6) {
+        self.ID =@"35252cb0ba7f47ee90856b678dd07ef5";
+    }
+    else if (BtnTag == 7) {
+        self.ID =@"4d5251416a144293a63824667f12e2d9";
+    }
+    else if (BtnTag == 8) {
+         self.ID =@"949c44aedf504e95a74b910c4cd295fd";
     }else{
+        self.ID =@"25";
         
     }
 
+    plastVC.IDs = _ID;
     
     [self.navigationController.tabBarController.navigationController pushViewController:plastVC animated:YES];
 
@@ -372,36 +381,45 @@
     [self.navigationController.tabBarController.navigationController pushViewController:zhaomuVC animated:YES];
 }
 
-- (void)LogButton:(UIButton *)sender {
-    PlasticViewController  *plastVC = [[PlasticViewController alloc] init];
-
-    self.hidesBottomBarWhenPushed =NO;
-     NSUInteger BtnTag = [sender tag];
-    
-    if (BtnTag == 1 ) {
-        
-        plastVC.IDs = @"27";
-    }else if (BtnTag == 2) {
-        plastVC.IDs = @"10";
-    }else if (BtnTag == 3) {
-        plastVC.IDs =  @"6";
-    }
-    else if (BtnTag == 4)
-    {
-               plastVC.IDs = @"18";
-    }else if (BtnTag == 5){
-         plastVC.IDs = @"24";
-        
-    }
-    else {
-        plastVC.IDs = @"25";
-    }
-   
-//    self.hidesBottomBarWhenPushed  = YES;
-    [self.navigationController.tabBarController.navigationController pushViewController:plastVC animated:YES];
-//    self.hidesBottomBarWhenPushed = NO;
-    
-}
+//- (void)LogButton:(UIButton *)sender {
+//    PlasticViewController  *plastVC = [[PlasticViewController alloc] init];
+//
+//    self.hidesBottomBarWhenPushed =NO;
+//     NSUInteger BtnTag = [sender tag];
+//    
+//    if (BtnTag == 1) {
+//        self.ID =@"27";
+//        
+//    }
+//    else if (BtnTag == 2) {
+//        self.ID =@"10";
+//    }
+//    else if (BtnTag == 3) {
+//        self.ID =@"6";
+//    }
+//    else if (BtnTag == 4) {
+//        self.ID =@"18";
+//    }
+//    else if (BtnTag == 5) {
+//        self.ID =@"24";
+//    }
+//    else if (BtnTag == 6) {
+//        self.ID =@"35252cb0ba7f47ee90856b678dd07ef5";
+//    }
+//    else if (BtnTag == 7) {
+//        self.ID =@"4d5251416a144293a63824667f12e2d9";
+//    }
+//    else if (BtnTag == 8) {
+//        self.ID =@"949c44aedf504e95a74b910c4cd295fd";
+//    }else{
+//        self.ID =@"25";
+//        
+//    }
+////    self.hidesBottomBarWhenPushed  = YES;
+//    [self.navigationController.tabBarController.navigationController pushViewController:plastVC animated:YES];
+////    self.hidesBottomBarWhenPushed = NO;
+//    
+//}
 - (void)pioneer_navigationController:(pioneer_navigationController *)navigationController withPioneerBarButtonType:(PioneerBarButtonType)barButtonType
 {
     switch (barButtonType) {

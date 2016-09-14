@@ -13,6 +13,9 @@
 #import "Plastic2Model.h"
 #import "InfoViewController.h"
 #import "SVProgressHUD/SVProgressHUD.h"
+#import "HosPlasticModel.h"
+#import "HosPlasticTableViewCell.h"
+#import "TalkViewController.h"
 @interface PlasticViewController ()<UITableViewDelegate,UITableViewDataSource,pioneer_navigationControllerDelegate>
 @property (strong, nonatomic) UITableView *bottTB;
 //@property (strong, nonatomic) UIView *headView;
@@ -43,59 +46,6 @@
 
 }
 
-
-
-- (void)load_testData
-    {
-        
-        @weakify(self);
-        [[HTTPManager sharedHTTPManager] httpManager:[NSString stringWithFormat:@"http://121.42.165.80/a/noauth/cms/article/list/?category.id=%@", self.IDs] parameter:nil requestType:HTTPTypePost complectionBlock:^(id responseData, NSError *error) {
-            @strongify(self);
-            
-            NSLog(@"pioneer   %@",responseData);
-            if([responseData isKindOfClass:[NSArray class]])
-            {
-                
-                NSLog(@"123");
-            }
-            
-            
-            
-            for (int i = 0; i < [responseData count]; i++) {
-                NSDictionary *dic = responseData[i];
-                PlasticModel *first = [PlasticModel initModelWithDictionary:dic];
-                
-                first.title = dic[@"title"];
-//                self.detailedViewController.headlinLb = dic[@"title"];
-                
-                NSDictionary *office = dic[@"office"];
-                NSDictionary *category = dic[@"category"];
-               
-                Plastic2Model *officeModel = [Plastic2Model initModelWithDictionary:office];
-                Plastic3Model *categoryModel = [Plastic3Model initModelWithDictionary:category];
-                
-                first.officeModel = officeModel;
-            
-                first.categoryModel = categoryModel;
-                NSLog(@"%@", first.categoryModel.ID);
-                
-                [self.models addObject:first];
-                
-                
-                
-            }
-            
-            ModelTool *model = [_models objectAtIndex:0];
-         
-            [model printModelFormatAttribute];
-            [self.bottTB reloadData];
-            
-            [SVProgressHUD dismiss];
-        }];
-        
-        
-    }
-
 - (NSMutableArray *)models {
     if (!_models) {
         
@@ -103,11 +53,9 @@
     }
     return _models;
 }
-
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
     
-//    _headView.sd_layout.topSpaceToView(self.view,64).widthRatioToView(self.view,1).heightIs(40);
     _bottTB.sd_layout.topSpaceToView(self.view,64).leftEqualToView(self.view).rightEqualToView(self.view).bottomEqualToView(self.view);
 }
 
@@ -117,19 +65,39 @@
         
     }
     return self;
-
+    
 }
+
+- (void)load_testData
+    {
+        
+        @weakify(self);
+        [[HTTPManager sharedHTTPManager] httpManager:[NSString stringWithFormat:@"http://121.42.165.80/a/noauth/sys/office/list?category.id=%@", self.IDs] parameter:nil requestType:HTTPTypePost complectionBlock:^(id responseData, NSError *error) {
+            @strongify(self);
+            [self.models removeAllObjects];
+            [self.models addObjectsFromArray:[HosPlasticModel getModelArrayWithDictionaryArray:responseData]];
+            [self performSelectorOnMainThread:@selector(update_table) withObject:nil waitUntilDone:YES];
+           
+        }];
+        
+        
+    }
+
+- (void)update_table
+{
+    [self.bottTB reloadData];
+    [SVProgressHUD dismiss];
+}
+
 
 - (UITableView *)bottTB {
     
     if (!_bottTB) {
         self.bottTB = [UITableView new];
-
+        _bottTB.rowHeight = 100;
         
-        _bottTB.rowHeight = 150;
-        
-        UINib *nib = [UINib nibWithNibName:@"PlasticCell" bundle:nil];
-        [_bottTB registerNib:nib forCellReuseIdentifier:@"PlasticCell"];
+        UINib *nib = [UINib nibWithNibName:@"HosPlasticTableViewCell" bundle:nil];
+        [_bottTB registerNib:nib forCellReuseIdentifier:@"HosPlasticTableViewCell"];
         _bottTB.delegate = self;
         _bottTB.dataSource = self;
     }
@@ -140,55 +108,33 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return _models.count;
-//    return 100;
     
 }
-
-- (void)viewDidLayoutSubviews {
-    
-    [super viewDidLayoutSubviews];
-    
-    
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    PlasticModel *model = _models[indexPath.row];
-    NSLog(@"%@",model.title);
-    
-    _stepDic = [NSMutableDictionary new];
-    //如果是主界面  加个字段  isMainPage
-    
-    [_stepDic setObject:@(true) forKey:@"isMainPage"];
-    [_stepDic setObject:model forKey:NSStringFromClass([PlasticModel class])];
-    
-//    self.detailedViewController = [[DetailedViewController alloc]initWithDictionryWithModel:_stepDic];
-    self.detailedViewController = [[InfoViewController alloc] initWithDictionryWithModel:_stepDic];
-    
-    
-    
-    
-//    self.hidesBottomBarWhenPushed = YES;
-    
-    [self.navigationController pushViewController:self.detailedViewController animated:YES];
-    self.hidesBottomBarWhenPushed = NO;
-
-}
-
-
-
-
-
-
 
 //返回cell方法
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
       
-    PlasticCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PlasticCell"];
-    cell.plasticModel = _models[indexPath.row];
-    
+    HosPlasticTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HosPlasticTableViewCell"];
+    cell.hosPlasticModel = _models[indexPath.row];
     
     return cell;
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    HosPlasticModel *model = _models[indexPath.row];
+    _stepDic = [NSMutableDictionary new];
+    //如果是主界面  加个字段  isMainPage
+    [_stepDic setObject:@(true) forKey:@"isMainPage"];
+    
+    [_stepDic setObject:model forKey:NSStringFromClass([HosPlasticModel class])];
+    
+    TalkViewController *talkVC = [[TalkViewController alloc] initWithConversationChatter:model.primaryPersonID conversationType:eConversationTypeChat WithDictionryWithModel:_stepDic];
+    [self.navigationController pushViewController:talkVC animated:YES];
+    self.hidesBottomBarWhenPushed = NO;
+    
 }
 
 

@@ -12,7 +12,11 @@
 - (void)setValue:(id)value forUndefinedKey:(nonnull NSString *)key {
     if ([key isEqualToString:@"id"]) {
         self.ID = value;
+    }else if ([key isEqualToString:@"user"]) {
+        _userPhone = value[@"phone"];
     }
+    
+    
     if ([key isEqualToString:@"office"]) {
         self.officeModel = [Hos22Model initModelWithDictionary:value];
     }

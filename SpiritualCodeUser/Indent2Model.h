@@ -9,4 +9,5 @@
 #import "ModelTool.h"
 
 @interface Indent2Model : ModelTool
+@property (nonatomic, copy)NSString *name;
 @end

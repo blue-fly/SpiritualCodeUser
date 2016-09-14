@@ -10,7 +10,8 @@
 #import "LXSegmentScrollView.h"
 #import "NameTableViewCell.h"
 #import "SexTableViewCell.h"
-
+#import "CollectModel.h"
+#import "Collect1Model.h"
 @interface CollectCollectViewController ()<pioneer_navigationControllerDelegate,UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource>
 //@property (strong, nonatomic) UIScrollView *bottomView;
 //@property (strong, nonatomic) LXSegmentScrollView *bottomView;
@@ -22,7 +23,7 @@
 @property (strong, nonatomic) NSString *userID;
 @property (strong, nonatomic) NSArray *dataArr;
 @property (strong, nonatomic) NSArray *carArr;
-
+@property (strong, nonatomic) NSMutableDictionary *setdic;
 @end
 
 @implementation CollectCollectViewController
@@ -89,7 +90,14 @@
     
     [[HTTPManager sharedHTTPManager] httpManager:@"http://121.42.165.80/a/sys/fav/list" parameter:dic requestType:HTTPTypeForm complectionBlock:^(id responseData, NSError *error) {
         
-        self.dataArr = [NSArray arrayWithArray:responseData];
+        self.dataArr = [CollectModel getModelArrayWithDictionaryArray:responseData];
+        
+        
+////        打印所有
+//        CollectModel *model = self.dataArr[0];
+//        
+//         [model printModelFormatAttribute];
+////        
         
 //        放到主线程
         [self performSelectorOnMainThread:@selector(redata) withObject:nil waitUntilDone:YES];
@@ -103,7 +111,7 @@
     
     [[HTTPManager sharedHTTPManager] httpManager:@"http://121.42.165.80/a/sys/cart/list" parameter:dic requestType:HTTPTypeForm complectionBlock:^(id responseData, NSError *error) {
         
-        self.carArr = [NSArray arrayWithArray:responseData];
+        self.carArr = [Collect1Model getModelArrayWithDictionaryArray:responseData];
         
         NSLog(@"xxresponseData %@",responseData );
         
@@ -140,14 +148,25 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+
+  
+    
     if (tableView == _hospitalTB) {
+        
+          CollectModel *collModel = _dataArr[indexPath.row];
         NameTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NameTableViewCell"];
+        cell.nameText.text = collModel.officeName;
+        cell.addresLB.text = collModel.patientName;
         return cell;
 
     }else {
-        SexTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SexTableViewCell"];
         
-    
+        Collect1Model *coll1Model = _carArr[indexPath.row];
+        SexTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SexTableViewCell"];
+        cell.nemeLB.text = coll1Model.articleTitle;
+        cell.addresLB.text = coll1Model.officeName;
+        cell.priceLB.text = coll1Model.articleappointprice;
+        
         return cell;
     }
         

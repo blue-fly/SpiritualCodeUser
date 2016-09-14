@@ -10,4 +10,15 @@
 
 @implementation IndentModel
 
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key
+{
+    if ([@"user" isEqualToString:key]) {
+    
+        _phoneName = value[@"name"];
+    }
+    
+
+}
+
+
 @end

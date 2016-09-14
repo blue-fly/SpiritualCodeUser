@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface OrderDetailVC : UIViewController
+- (instancetype)initWithDictionryWithModel:(NSDictionary *)modelDic;
 
 @end

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ConfirmPayOrderViewController : UIViewController
+//@property (nonatomic, strong)NSString *orderNumber;
 @property (weak, nonatomic) IBOutlet UIButton *weixinPay;
 @property (weak, nonatomic) IBOutlet UIButton *zhifubaoPay;
 - (instancetype)initWithDictionryWithModel:(NSDictionary *)modelDic;

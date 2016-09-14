@@ -16,6 +16,8 @@
 
 #import "Hos2Model.h"
 #import "PlasticModel.h"
+#import "HosPlasticModel.h"
+#import "HosModel.h"
 @interface InfoViewController () {
     NSDictionary *_stepDic;//传值字典
 }
@@ -118,6 +120,9 @@
 
 - (void)setUpInfo {
     
+    HosModel *hosmodel = _stepDic[NSStringFromClass([HosModel class])];
+    Hos2Model *hos2model = _stepDic[NSStringFromClass([Hos2Model class])];
+    
     //显示医院名称
     UIView *infoVC1 = [[UIView alloc] init];
     
@@ -148,7 +153,7 @@
     UILabel *headNameLabel = [[UILabel alloc] init];
     [infoVC1 addSubview:headNameLabel];
     
-    headNameLabel.text = @"济南俪美整形美容医院";
+    headNameLabel.text =hosmodel.name;
     headNameLabel.font = [UIFont systemFontOfSize:16];
     
     [headNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -194,7 +199,7 @@
     [infoVC2 addSubview:addressBtn];
     
     [addressBtn setImage:[UIImage imageNamed:@"zuobiao"] forState:UIControlStateNormal];
-    [addressBtn setTitle:@"济南俪美整形美容医院" forState:UIControlStateNormal];
+    [addressBtn setTitle:hosmodel.address forState:UIControlStateNormal];
     [addressBtn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
     [addressBtn setFont:[UIFont systemFontOfSize:15 weight:-0.15]];
     
@@ -350,7 +355,7 @@
     UILabel *subjectName = [[UILabel alloc] init];
     [infoVC5 addSubview:subjectName];
     
-    subjectName.text = @"【中医推拿】 全身推拿按摩";
+    subjectName.text = hos2model.title;
     headNameLabel.font = [UIFont systemFontOfSize:16 weight:1];
     
     [subjectName mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -363,7 +368,7 @@
     UILabel *priceLable = [[UILabel alloc] init];
     [infoVC5 addSubview:priceLable];
     
-    priceLable.text = @"￥100 ";
+    priceLable.text = [NSString stringWithFormat:@"¥ %@",hos2model.appointprice];
     priceLable.font = [UIFont systemFontOfSize:17 weight:-0.1];
     priceLable.textColor = [UIColor redColor];
     

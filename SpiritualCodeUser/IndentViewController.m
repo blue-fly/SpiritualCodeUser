@@ -170,13 +170,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     IndentModel *hos = _dataArr[indexPath.row];
-    NSMutableDictionary *stepDicModel = (NSMutableDictionary *)_dicModel;
     
+    NSMutableDictionary *stepDicModel = [NSMutableDictionary new];
     
     [stepDicModel setObject:hos forKey:NSStringFromClass([IndentModel class])];
-
-    
-    OrderDetailVC *orderVC = [OrderDetailVC new];
+    OrderDetailVC *orderVC = [[OrderDetailVC alloc] initWithDictionryWithModel:stepDicModel];
      self.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:orderVC animated:YES];
     self.hidesBottomBarWhenPushed = NO;

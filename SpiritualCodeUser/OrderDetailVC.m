@@ -7,8 +7,11 @@
 //
 
 #import "OrderDetailVC.h"
+#import "IndentModel.h"
 
-@interface OrderDetailVC ()
+@interface OrderDetailVC (){
+    NSDictionary *_setModel;
+}
 /***********************2016年08月14日11:47:31*********************/
 /****************************订单信息展示********************************/
 @property (weak, nonatomic) IBOutlet UILabel *orderNoLB;        //订单号
@@ -26,6 +29,14 @@
 @end
 
 @implementation OrderDetailVC
+
+- (instancetype)initWithDictionryWithModel:(NSDictionary *)modelDic {
+    if (self = [super init]) {
+        _setModel = modelDic;
+    }
+    return self;
+}
+
 //order <----> model
 - (instancetype)initWithOrderModel:(id)orderModel
 {
@@ -37,7 +48,38 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+     IndentModel *indentModel = _setModel[NSStringFromClass([IndentModel class])];
+    
+    self.orderNoLB.text = indentModel.orderNo;
+    self.orderPhoneLB.text = [NSString stringWithFormat:@"%@",indentModel.phoneName];
+    
+    self.payLB.text = [NSString stringWithFormat:@"%@",indentModel.unitprice];
+     self.officialPriceLB.text = [NSString stringWithFormat:@"%@",indentModel.totalprice];
+    self.orderNumberLB.text =   [NSString stringWithFormat:@"%@",indentModel.procount];
+    self.orderTittleLB.text = indentModel.articleModel.title;
+    self.orderHospitalLB.text = indentModel.categoryModel.name;
+
+    
+    
+//    BOOL isMainPage = [_stepDicModel[@"isMainPage"] boolValue];
+
+    if ([indentModel.orderFlag isEqualToString:@"1" ]) {
+        self.orderMethodLB.text = @"支付宝";
+    }else {
+        self.orderMethodLB.text = @"微信";
+    }
+    
+    
+    if ([indentModel.orderStatus isEqualToString:@"0" ]) {
+        self.orderStatusLB.text = @"未支付";
+    }else {
+        self.orderMethodLB.text = @"已支付";
+    }
+    
 }
+
+
 - (IBAction)blackBth:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
