@@ -14,6 +14,7 @@
 #import <MBProgressHUD.h>
 #import "UIViewController+HUD.h"
 #import "SendFeedbackViewController.h"
+#import "ProtocolViewController.h"
 
 @interface SetViewController ()<pioneer_navigationControllerDelegate,UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) UITableView *bottomTB;
@@ -133,6 +134,12 @@
 //        [self.navigationController pushViewController:sendVC animated:YES];
         [self.tabBarController.navigationController pushViewController:sendVC animated:YES];
         
+    }else if(indexPath.row == 4) {
+        
+        //相关协议
+        ProtocolViewController *protoVC = [[ProtocolViewController alloc] init];
+        
+        [self.navigationController pushViewController:protoVC animated:YES];
     }
     
 }

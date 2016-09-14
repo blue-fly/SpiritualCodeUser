@@ -18,6 +18,6 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *ageTextField;
 
-@property (weak, nonatomic) IBOutlet UIView *areaView;
+@property (weak, nonatomic) IBOutlet UITextField *areaTextField;
 
 @end

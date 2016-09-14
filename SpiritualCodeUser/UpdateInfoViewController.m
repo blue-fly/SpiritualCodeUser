@@ -134,11 +134,13 @@
     self.ageTextField.leftView = ageLabel;
     self.ageTextField.leftViewMode = UITextFieldViewModeAlways;
     
-    //给地区添加点击手势
-    UITapGestureRecognizer *tapGesture2=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(areaClick:)];
-    
-    
-    [self.areaView addGestureRecognizer:tapGesture2];
+
+    //给地区加上左视图
+    UILabel *areaLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 0, 75, 21)];
+    [areaLabel setText:@"地区"];
+    [areaLabel setTextAlignment:NSTextAlignmentCenter];
+    self.areaTextField.leftView = areaLabel;
+    self.areaTextField.leftViewMode = UITextFieldViewModeAlways;
     
 }
 
@@ -213,11 +215,7 @@
     
 }
 
-//点击地区
-- (void)areaClick:(UITapGestureRecognizer *)gesture {
-    
-    NSLog(@"点击了地区");
-}
+
 
 //单选
 -(void)didSelectedRadioButton:(QRadioButton *)radio groupId:(NSString *)groupId

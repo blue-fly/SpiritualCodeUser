@@ -30,6 +30,8 @@
 		0752AEBD1D8107890022EF38 /* radio_unchecked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0752AEB81D8107890022EF38 /* radio_unchecked@2x.png */; };
 		0752AEC01D810A650022EF38 /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 0752AEBF1D810A650022EF38 /* UIImage+RoundedCorner.m */; };
 		0752AEC31D810E190022EF38 /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 0752AEC21D810E190022EF38 /* UIImage+Alpha.m */; };
+		0782520C1D89675D00C163AF /* Protocol.html in Resources */ = {isa = PBXBuildFile; fileRef = 0782520B1D89675D00C163AF /* Protocol.html */; };
+		0782520F1D89693D00C163AF /* ProtocolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0782520E1D89693D00C163AF /* ProtocolViewController.m */; };
 		079634C51D83A47A005AC819 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 079634B21D83A47A005AC819 /* FMDatabase.m */; };
 		079634C61D83A47A005AC819 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 079634B41D83A47A005AC819 /* FMDatabaseAdditions.m */; };
 		079634C71D83A47A005AC819 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 079634B61D83A47A005AC819 /* FMDatabasePool.m */; };
@@ -279,6 +281,9 @@
 		0752AEBF1D810A650022EF38 /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
 		0752AEC11D810E190022EF38 /* UIImage+Alpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Alpha.h"; sourceTree = "<group>"; };
 		0752AEC21D810E190022EF38 /* UIImage+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Alpha.m"; sourceTree = "<group>"; };
+		0782520B1D89675D00C163AF /* Protocol.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Protocol.html; sourceTree = "<group>"; };
+		0782520D1D89693D00C163AF /* ProtocolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProtocolViewController.h; sourceTree = "<group>"; };
+		0782520E1D89693D00C163AF /* ProtocolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProtocolViewController.m; sourceTree = "<group>"; };
 		079634B11D83A47A005AC819 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
 		079634B21D83A47A005AC819 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
 		079634B31D83A47A005AC819 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
@@ -974,6 +979,7 @@
 		BCA2401D1D2F7C34001FC84B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0782520B1D89675D00C163AF /* Protocol.html */,
 				BCA2401E1D2F7C34001FC84B /* main.m */,
 			);
 			name = "Supporting Files";
@@ -1572,6 +1578,8 @@
 				0744CF3F1D82718C00EAB884 /* SendFeedbackViewController.m */,
 				07BEE5EB1D87921C00F65CC7 /* BeautyViewController.h */,
 				07BEE5EC1D87921C00F65CC7 /* BeautyViewController.m */,
+				0782520D1D89693D00C163AF /* ProtocolViewController.h */,
+				0782520E1D89693D00C163AF /* ProtocolViewController.m */,
 			);
 			name = SecondVC;
 			sourceTree = "<group>";
@@ -1712,6 +1720,7 @@
 				BE4CCCB51D606D0F006B7238 /* OrderListCell.xib in Resources */,
 				BE7DD2521D4208B40076B4D9 /* HosIntroduceViewController.xib in Resources */,
 				BE7DD23A1D40D2C50076B4D9 /* HospitalCell.xib in Resources */,
+				0782520C1D89675D00C163AF /* Protocol.html in Resources */,
 				BE7DD1FB1D3DBB620076B4D9 /* MyViewController.xib in Resources */,
 				BCA240281D2F7C34001FC84B /* Main.storyboard in Resources */,
 				BE26786B1D54537000612E26 /* NameTableViewCell.xib in Resources */,
@@ -1888,6 +1897,7 @@
 				BC6476631D323B780020BDF9 /* CustomCell.m in Sources */,
 				BE7DD1AC1D3C9F6A0076B4D9 /* HospitalCell.m in Sources */,
 				07AEC4A51D8151880019DEC4 /* MASViewAttribute.m in Sources */,
+				0782520F1D89693D00C163AF /* ProtocolViewController.m in Sources */,
 				BE7DD2491D41EEB80076B4D9 /* TLCity.m in Sources */,
 				BE4280B61D65DB32003678C2 /* IndentModel.m in Sources */,
 				0712170D1D80FDA90089A460 /* UpdateInfoViewController.m in Sources */,

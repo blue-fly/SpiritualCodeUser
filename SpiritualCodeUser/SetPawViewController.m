@@ -186,7 +186,7 @@
     
     [manager POST:@"http://121.42.165.80/a/noauth/user/modifyPwd" parameters:@{@"phone":phone,@"smsCode":smsCode,@"newPassword":_verifyCodeTF.text} progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  responseObject) {
         
-        NSLog(@"%@",responseObject);
+        [self.navigationController popToRootViewControllerAnimated:YES]; 
         
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {

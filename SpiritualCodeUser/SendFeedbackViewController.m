@@ -9,6 +9,8 @@
 #import "SendFeedbackViewController.h"
 #import "UIViewController+HUD.h"
 #import <IQKeyboardReturnKeyHandler.h>
+#import "UIControl+ActionBlocks.h"
+
 @interface SendFeedbackViewController ()<UITextViewDelegate>
 
 @property (nonatomic, weak) UITextView *textView;
@@ -36,6 +38,22 @@
 
 -(void)setupBasic {
 //    [self setupForDismissKeyboard];
+    
+    // 自定义导航栏左侧按钮
+    UIButton * leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    leftBtn.frame = CGRectMake(0, 7, 30, 30);
+    //    leftBtn.backgroundColor = [UIColor orangeColor];
+    [leftBtn setImage:[UIImage imageNamed:@"bar_back"] forState:UIControlStateNormal];
+    //返回点击事件
+    [leftBtn handleControlEvents:UIControlEventTouchUpInside withBlock:^(id weakSender) {
+        
+        [self.navigationController popViewControllerAnimated:YES];
+        
+    }];
+    
+    UIBarButtonItem * leftItem = [[UIBarButtonItem alloc] initWithCustomView:leftBtn];
+    self.navigationItem.leftBarButtonItem = leftItem;
+
     
     self.title = @"反馈";
     self.automaticallyAdjustsScrollViewInsets = NO;

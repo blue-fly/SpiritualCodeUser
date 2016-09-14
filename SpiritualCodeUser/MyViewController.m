@@ -94,6 +94,10 @@
                 self.nameLB.text = responseData[@"name"];
             }
             
+            if(responseData[@"loginName"] != nil) {
+                self.numbeeLB.text = responseData[@"loginName"];
+            }
+            
             
             [self.headImage sd_setImageWithURL:[NSURL URLWithString:responseData[@"photo"]] placeholderImage:[UIImage imageNamed:@"touxiang"]];
         });
